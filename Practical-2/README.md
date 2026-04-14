@@ -15,9 +15,9 @@ The dataset contains different attributes for over 427,000 vehicles, including:
 * Price
 * Year
 * Odometer
-* Cylinder
+* Cylinders
 * Model
-* Manufacture
+* Manufacturer
 * Condition
 * Fuel Type
 * Transmission
@@ -32,14 +32,14 @@ The dataset contains different attributes for over 427,000 vehicles, including:
  ### Visualizations Created 
   * Distribution of Vehicle Prices
   * Barplot of Odometer Distribution
-  * Scatterplot of Milage vs Price
+  * Scatterplot of Mileage vs Price
   * Boxplot of Condition vs Price
 
 ## Data Preparation
 The following steps were performed to clean the data:
 
 * Removed unnecessary columns that will not affect vehicle prices (ie: VIN, ID, etc)
-* Exacted numeric values from the cylinders column and converted them to numeric values
+* Extracted numeric values from the cylinders column and converted them to numeric values
 * Filled missing (NaN) categorical values with 'unknown'
 * Removed rows with missing year values
 * Filtered out extreme outliers for visualization purposes
@@ -51,15 +51,18 @@ The following regression models were used:
 3. Random Forest Regression (had to comment it out due to computational restraints)
 
 ## Model Evaluation
-* R2 - Coefficient
-* RMSE - Root Mean Squared Error
+* R2 - Coefficient of Determination - measures the prediction accuracy of a regression model against actual data points
+* RMSE - Root Mean Squared Error - Measures the prediction error in price
+* Both Linear Regression and Ridge Regression models produced similar results.
+
+## Key Insights
+* The vehicle prices generally decrease as the mileage increases
+* New vehicles tend to higher prices
+* The manufacturer is associated with the price of vehicles
 
 ## Recommendations
 * Based on the analysis, dealerships should prioritize inventory vehicles with lower milage to maintain higher resale value
 * To determine an estimated fair market value, use regression modeling as your baseline tool
 * Consider year, condition, and manufacturer when pricing 
 
-### Key Insights
-* The vehicle prices generally decreases as the milage increases
-* New vehicles tend to higher prices
-* The manufacturer can also influence the price of vehicles
+
