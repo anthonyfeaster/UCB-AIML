@@ -18,10 +18,7 @@ This dataset contains records from several market campaigns by a Portuguese bani
 * Target Variable: Y
 
 ## Exploratory Data Analysis (EDA)
-During the exploratory data analysis (EDA) phase, I reviewed the entire dataset to include the shape of the data, missing values, column data types, duplicate and missing values. Several columns contained "unknown" values. I evaluated the overall effect of making changes before removing them from the job and marital columns. For the other columns, "uknown" made up too significant of entries to drop them. Also, all of the duplicate entries were found and removed before modeling.
-
-* The dataset contains 21 columns with over 41k entries.
-* Several columns contained "unkown' values
+During the exploratory data analysis (EDA) phase, I reviewed the entire dataset to include the shape of the data, missing values, column data types, duplicate and missing values. The dataset is quite large as it contains 21 columns and over 41k entries. I noticed several columns that contained "unknown" values. These entries will need to be further evaluated before modeling.
 
 ### Visualizations Created 
 This project includes the following visualizations:
@@ -31,18 +28,16 @@ This project includes the following visualizations:
 * Barplot - Subscription Rate by Marital Status
 
 ## Data Preparation
-
-
+After evaluating the overall effect of making changes to the "unknown" values throughout the dataset, it was determined that removing them from the job and marital columns was ok because it only represented .8% and .19% of the data. For the other columns, "uknown" made up too significant of entries to drop them. In addition, all of the duplicate entries were found and removed before modeling.
 
 ## Modeling
 I used DummyClassifier to create a baseline model utilzing the 'most frequent' strategy. This model uses the majority class for its predictions.
 
 I then used the following classification models to trained and later compared them:
-* Logistic Regression
-* K Nearest Neighbor (KNN)
-* Decision Tree
-* Support Vector Model (SVM)
-
+1. Logistic Regression
+2. K Nearest Neighbor (KNN)
+3. Decision Tree
+4. Support Vector Model (SVM)
 
 ## Model Evaluation
 Models were evaluated by using the following:
@@ -51,5 +46,10 @@ Models were evaluated by using the following:
 * Test Accuracy
   
 ## Key Findings
+* The dataset is imbalanced. Most clients are not subscribers to a term deposit
+* Using the majority class, the baseline model predicted with high accuracy
+* The SVM model was the most accurate but took the longest time to train
+* The Decision Tree model showed signs of overfitting. GridSearchCV improved the accuracy by reducing overfitting.
 
 ## Recommendations
+* For future work to this project I recommend retraining models using campaign related or economic features to improve performance. Also recommend tuning the Logistic Regression and KNN models to see if accuracy improves.
