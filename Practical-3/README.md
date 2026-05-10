@@ -1,5 +1,5 @@
 # Practical Application III: Comparing Classifiers
-**Author:** Anthony Feaster <br>
+**Author:** Anthony Feaster II<br>
 **Assignment:** Practical Application #3 <br>
 **Date:** Apr 2026
 
