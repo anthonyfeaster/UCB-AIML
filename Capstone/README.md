@@ -6,7 +6,7 @@
 ## Executive Summary
 This project evaluates whether machine learning models can classify network traffic as benign or malicious using network flow data. The dataset contains features such as source and destination IP addresses, protocols, packet count, traffic labels, source and destination ports, and byte count. 
 
-Using these data features to perform initial data cleaning, exploratory data analysis, feature engineering, model training, hyperparameter tuning and model evaluation. Several additional engineered features such as ICMP indicators, source and destination frequency, rate-based traffic, and port categories were created to provide more network behavioral context.
+These data features were used to perform initial data cleaning, exploratory data analysis, feature engineering, model training, hyperparameter tuning and model evaluation. Several additional engineered features such as ICMP indicators, source and destination frequency, rate-based traffic, and port categories were created to provide more network behavioral context.
 
 Models were created and evaluated using accuracy, precision, recall, F1 score and confusion matrices. Logistic Regression performed the best among the classification models however, model performance remained close to the baseline. Since the dataset was nearly balanced between benign and malicious traffic, the performance suggest that existing features were not enough to distinguish between the two classes.
 
