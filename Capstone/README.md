@@ -1,4 +1,4 @@
-# Capstone - Machine Learning-Based Intrusion Detection System
+# Capstone - Machine Learning Based Intrusion Detection System
 **Author:** Anthony Feaster II<br>
 **Assignment:** Capstone <br>
 **Date:** June 2026
@@ -6,9 +6,9 @@
 ## Executive Summary
 This project evaluates whether machine learning models can classify network traffic as benign or malicious using network flow data. The dataset contains features such as source and destination IP addresses, protocols, packet count, traffic labels, source and destination ports, and byte count. 
 
-Using these data features to perform initial data cleaning, exploratory data analysis, feature engineering, model training, hyperparameter tuning and model evaluation. Several additional engineering features such as ICMP indicators, source and destination frequency, rate-based traffic, and port categories were created to provide more network behavioral context.
+Using these data features to perform initial data cleaning, exploratory data analysis, feature engineering, model training, hyperparameter tuning and model evaluation. Several additional engineered features such as ICMP indicators, source and destination frequency, rate-based traffic, and port categories were created to provide more network behavioral context.
 
-Models were created and evaluated using accuracy, precision, recall, F1 score and confusion matrices. Logistic Regression performed the best amongst the classification models however, model performance remained close to the baseline. Since the dataset was nearly balanced between benign and malicious traffic, the models performance suggest that existing features were not enough to distinguish between the two classes.
+Models were created and evaluated using accuracy, precision, recall, F1 score and confusion matrices. Logistic Regression performed the best among the classification models however, model performance remained close to the baseline. Since the dataset was nearly balanced between benign and malicious traffic, the performance suggest that existing features were not enough to distinguish between the two classes.
 
 ## Rationale
 Security analysts in a Security Operations Center (SOC) often review large volumes of network logs and alerts to identify suspicious activity. Although there are security tools that can help with detecting anomalies, analysts still need to determine if traffic is benign or malicious. 
@@ -46,3 +46,5 @@ The results of the models performance close to baseline. The Logistic Regression
 ## Next Steps
 * Future iterations of this project can include timestamped network traffic. This would allow analysis of traffic history and whether ICMP packets hit a destination IP before malicious traffic occurs. In addition the timestamped network traffic would allow for additional features to be created and analysis performed to determine deeper correlation of the data. Additional predictive models can be used to proactively monitor and detect network anomalies.
 
+## Outline of Project
+* https://github.com/anthonyfeaster/UCB-AIML/blob/main/Capstone/capstone_final.ipynb
