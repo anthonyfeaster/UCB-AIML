@@ -41,11 +41,8 @@ For this project, I developed a machine learning based intrusion detection syste
   * During this phase data was preprocessed and prepared for classification models. A Dummy Classifier was used to build a baseline model and Logistic Regression and Random Forest models were trained to evaluate performance. GridSearchCV was used to tune Random Forest model. Models performance were evaluated using accuracy, precision, recall, F1 score and confusion matrix. Evaluating the accuracy of a model alone was not sufficient  because false positives and false negatives have different cybersecurity and business impacts.
 
 ## Results
-* Baseline Model achieved an accuracy of 
-* Logistic Regression Model achieved an accuracy of 
-* Random Forest Classifier Model achieved an accuracy of 
-* All models performed near the baseline which is expected since the malicious and benign data is split almost 50/50.
+The results of the models performance close to baseline. The Logistic Regression model performed the best out of the classification models. Overall, the results suggest that existing features were not enough to distinguish between the two classes.
 
 ## Next Steps
-* Future iterations of this project can include timestamped network traffic to analyze if ICMP packets hit a destination IP before malicious traffic occurs. In addition the timestamped network traffic would allow for additional features to be created and analysis performed to determine deeper correlation of the data. 
+* Future iterations of this project can include timestamped network traffic. This would allow analysis of traffic history and whether ICMP packets hit a destination IP before malicious traffic occurs. In addition the timestamped network traffic would allow for additional features to be created and analysis performed to determine deeper correlation of the data. Additional predictive models can be used to proactively monitor and detect network anomalies.
 
