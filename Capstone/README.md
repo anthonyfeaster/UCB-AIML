@@ -1,4 +1,4 @@
-# Capstone - Machine Learning Based Intrusion Detection System
+# Capstone - Machine Learning-Based Intrusion Detection System
 **Author:** Anthony Feaster II<br>
 **Assignment:** Capstone <br>
 **Date:** June 2026
@@ -16,7 +16,7 @@ Security analysts in a Security Operations Center (SOC) often review large volum
 This is an interesting and important problem set because false positives and false negatives have different cybersecurity and business impacts. A false positive means unnecessary security alerts which could lead to analyst fatigue while a false negative may allow malicious traffic to go undetected.
 
 ## Research Question
-Can machine learning models accurately classify network traffic as malicious or benign using network flow data that contains features such as ports, packet counts, connection duration, protocols, source and destination IP address?
+Can machine learning models accurately classify network traffic as malicious or benign using network flow data that contains features such as ports, packet counts, connection duration, protocols, source and destination IP addresses?
 
 ## Data Sources
 The data used for this capstone project comes from a Kaggle dataset called, "Network Traffic Data for Intrusion Detection". This is a network flow dataset where each column contains different aspects of a standard network transaction.
@@ -24,49 +24,28 @@ The data used for this capstone project comes from a Kaggle dataset called, "Net
 * Network Connection Attributes: Duration, PacketCount, ByteCount
 * Label - Target Variable - identifies traffic as 'normal' or 'attack'
 
-The orginal labels were renamed to current cybersecurity terminology:
+The original labels were renamed to current cybersecurity terminology:
 * Normal was renamed to Benign
 * Attack was renamed to Malicious
 
 # Methodology
-This project followed standard machine learning workflow:
+For this project, I developed a machine learning based intrusion detection system designed to accurately categorize network traffic as either benign or malicious. The project followed standard machine learning workflow to include data acquisition and cleaning, exploratory data analysis, feature engineering, model training hyperparameter tuning and model evaluation.
 
 * Data Acquisition and Cleaning
-  * Loaded dataset into a pandas DataFrame
-  * Checked dataset for missing values, duplicate rows and data type
-  * Renamed target labels to 'Benign' and 'Malicious'
-* Exploratory Data Analysis
-  * Reviewed class balance between benign and malicious traffic
-  * Analyzed protocol distribution across traffic protocols
-  * Explored correlation between packet count, byte count, duration, source and destination ports
-  * Reviewed association of destination ports with higher malicious traffic rates
-  * Explored ICMP traffic patterns
-  * Performed outlier analysis on key numeric traffic features
+  * The dataset was loaded into a pandas DataFrame and checked for missing values, duplicate rows and data types. Target labels were renamed to be consistent with current cybersecurity terminology.
+* Exploratory Data Analysis (EDA)
+  * During this phase, analysis was performed to understand the dataset and identify potential traffic patterns. This included reviewing class balance between benign and malicious traffic, analyzing protocol distribution, rate-based correlation and exploring port behavior.
 * Feature Engineering
-  * Created port categories 
-  * Created rate based features
-    * Bytes per packet
-    * Bytes per second
-    * Packets per second
-  * Created protocol related feature
-    * ICMP indicator
-  * Created frequency based features
-    * Source IP frequency
-    * Destination IP frequency
-    * Source-Destination IP frequency
+  * Additional features were created to give the models with more network behavior context. These features included port categories, rate-based traffic, protocol indicators and frequency based features.
 * Modeling
-  * Utilized Dummy Classifier to build a baseline model
-  * Trained Logistic Regression and Random Forest models
-  * GridSearchCV was used to tune Random Forest model
-  * Compared model performance using accuracy, precision, recall, F1 score and confusion matrix
+  * During this phase data was preprocessed and prepared for classification models. A Dummy Classifier was used to build a baseline model and Logistic Regression and Random Forest models were trained to evaluate performance. GridSearchCV was used to tune Random Forest model. Models performance were evaluated using accuracy, precision, recall, F1 score and confusion matrix. Evaluating the accuracy of a model alone was not sufficient  because false positives and false negatives have different cybersecurity and business impacts.
 
 ## Results
-* Baseline Model achieved an accuracy of 52.25%
-* Logistic Regression Model achieved an accuracy of 49.5%
-* Random Forest Classifier Model achieved an accuracy of 51.5%
+* Baseline Model achieved an accuracy of 
+* Logistic Regression Model achieved an accuracy of 
+* Random Forest Classifier Model achieved an accuracy of 
 * All models performed near the baseline which is expected since the malicious and benign data is split almost 50/50.
 
 ## Next Steps
-* Future iterations of this project should include timestamped network traffic which would allow for additional feature engineering to analyze if ICMP packets hit a destination IP before malicious traffic occurs. In a real world scenario, attackers often scan or ping a target to see if it’s online before launching an attack.
-* Implementing additional predictive models to estimate the likelihood of malicious traffic targeting a specific IP or port.
-* Using a larger dataset might help with model training
+* Future iterations of this project can include timestamped network traffic to analyze if ICMP packets hit a destination IP before malicious traffic occurs. In addition the timestamped network traffic would allow for additional features to be created and analysis performed to determine deeper correlation of the data. 
+
