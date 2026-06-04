@@ -1,6 +1,6 @@
 # Capstone - Machine Learning Based Intrusion Detection System
 **Author:** Anthony Feaster II<br>
-**Assignment:** Capstone <br>
+**Assignment:** Capstone - Part 1 <br>
 **Date:** May 2026
 
 ## Executive Summary
