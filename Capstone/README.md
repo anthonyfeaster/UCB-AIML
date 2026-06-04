@@ -4,7 +4,11 @@
 **Date:** June 2026
 
 ## Executive Summary
-This project evaluates a critical workflow by analyzing network traffic data and providing valuable information to network security analysts. The machine learning based intrusion detection system aims to serve as an effective security monitoring tool allowing network security analysts to optimize their time for other important functions. A dataset of 2,000 network records was used to perform exploratory data analysis, data cleaning, feature engineering, and pipeline preprocessing. Three models were implemented to determine a baseline and evaluate their accuracy. The results demonstrated that the models performed similarly to a coin toss, indicating that more features might be needed to increase the accuracy of the predictions. 
+This project evaluates whether machine learning models can classify network traffic as benign or malicious using network flow data. The dataset contains features such as source and destination IP addresses, protocols, packet count, traffic labels, source and destination ports, and byte count. 
+
+Using these data features to perform initial data cleaning, exploratory data analysis, feature engineering, model training, hyperparameter tuning and model evaluation. Several additional engineering features such as ICMP indicators, source and destination frequency, rate-based traffic, and port categories were created to provide more network behavioral context.
+
+Models were created and evaluated using accuracy, precision, recall, F1 score and confusion matrices. Logistic Regression performed the best amongst the classification models however, model performance remained close to the baseline. Since the dataset was nearly balanced between benign and malicious traffic, the models performance suggest that existing features were not enough to distinguish between the two classes.
 
 ## Rationale
 Security analysts in a Security Operations Center (SOC) often review large volumes of network logs and alerts to identify suspicious activity. Although there are security tools that can help with detecting anomalies, analysts still need to determine if traffic is benign or malicious. 
