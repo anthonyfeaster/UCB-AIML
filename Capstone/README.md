@@ -13,7 +13,7 @@ Models were created and evaluated using accuracy, precision, recall, F1 score an
 ## Rationale
 Security analysts in a Security Operations Center (SOC) often review large volumes of network logs and alerts to identify suspicious activity. Although there are security tools that can help with detecting anomalies, analysts still need to determine if traffic is benign or malicious. 
 
-This is an interesting and important problem set because false positives and false negatives have different cybersecurity and business impacts. A false positive means unneccisary security alerts which could lead to analyst fatigue while a false negative may allow malicious traffic to go undetected.
+This is an interesting and important problem set because false positives and false negatives have different cybersecurity and business impacts. A false positive means unnecessary security alerts which could lead to analyst fatigue while a false negative may allow malicious traffic to go undetected.
 
 ## Research Question
 Can machine learning models accurately classify network traffic as malicious or benign using network flow data that contains features such as ports, packet counts, connection duration, protocols, source and destination IP address?
@@ -29,7 +29,36 @@ The orginal labels were renamed to current cybersecurity terminology:
 * Attack was renamed to Malicious
 
 # Methodology
-For this project, I developed a machine learning based intrusion detection system designed to accurately categorize network traffic as either benign or malicious.  First loaded and used exploratory data analysis on the dataset to determine data quality and integrity. Next was feature engineering to ensure the proper features were used to find correlations. The data was preprocessed and put through pipelines to prepare it for being trained in models. Benchmarks were established to compare the accuracy of the trained models.
+This project followed standard machine learning workflow:
+
+* Data Acquisition and Cleaning
+  * Loaded dataset into a pandas DataFrame
+  * Checked dataset for missing values, duplicate rows and data type
+  * Renamed target labels to 'Benign' and 'Malicious'
+* Exploratory Data Analysis
+  * Reviewed class balance between benign and malicious traffic
+  * Analyzed protocol distribution across traffic protocols
+  * Explored correlation between packet count, byte count, duration, source and destination ports
+  * Reviewed association of destination ports with higher malicious traffic rates
+  * Explored ICMP traffic patterns
+  * Performed outlier analysis on key numeric traffic features
+* Feature Engineering
+  * Created port categories 
+  * Created rate based features
+    * Bytes per packet
+    * Bytes per second
+    * Packets per second
+  * Created protocol related feature
+    * ICMP indicator
+  * Created frequency based features
+    * Source IP frequency
+    * Destination IP frequency
+    * Source-Destination IP frequency
+* Modeling
+  * Utilized Dummy Classifier to build a baseline model
+  * Trained Logistic Regression and Random Forest models
+  * GridSearchCV was used to tune Random Forest model
+  * Compared model performance using accuracy, precision, recall, F1 score and confusion matrix
 
 ## Results
 * Baseline Model achieved an accuracy of 52.25%
@@ -38,5 +67,6 @@ For this project, I developed a machine learning based intrusion detection syste
 * All models performed near the baseline which is expected since the malicious and benign data is split almost 50/50.
 
 ## Next Steps
-* Future iterations of this project can include additional feature engineering to analyze if ICMP packets  hit a destination IP before malicious traffic occurs. In a real world scenario, attackers often scan or ping a target to see if it’s online before launching an attack.
+* Future iterations of this project should include timestamped network traffic which would allow for additional feature engineering to analyze if ICMP packets hit a destination IP before malicious traffic occurs. In a real world scenario, attackers often scan or ping a target to see if it’s online before launching an attack.
 * Implementing additional predictive models to estimate the likelihood of malicious traffic targeting a specific IP or port.
+* Using a larger dataset might help with model training
